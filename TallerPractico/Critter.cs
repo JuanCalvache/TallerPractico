@@ -6,8 +6,8 @@ namespace TallerPractico
 {
     class Critter
     {
-        //Atributos
-        private string name, afinity; //Fire, Wind, Water, Earth, Dark, Light
+        //Atributos //Fire, Wind, Water, Earth, Dark, Light
+        private string name, afinity; 
         private float baseAttack, currentAttack, baseDefense, currentDefense, baseSpeed, currentSpeed, hp, currentHp;
         private List<Skill> moveset;
 
@@ -67,7 +67,7 @@ namespace TallerPractico
         public float CurrentHp { get => currentHp; set => currentHp = value; }
 
         public float HP { get => hp; }
-        public string Afinity { get; }
+        public string Afinity { get => afinity; }
         public float BaseAttack { get => baseAttack; }
         public float BaseDefense { get => baseDefense; }
         public float BaseSpeed { get => baseSpeed; }
