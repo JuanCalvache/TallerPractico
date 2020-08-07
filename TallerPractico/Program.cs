@@ -45,7 +45,7 @@ namespace TallerPractico
             //Construir los critters
             Critter Steven = new Critter("StevenF", 90, 100, 25, 160, "Fire", FireSkills);
             Critter Stewart = new Critter("Stewart", 70, 10, 50, 90, "Light", LightSkills);
-            Critter Susan = new Critter("Susan", 100, 1, 40, 100, "Dark", DarkSkills);
+            Critter Susan = new Critter("Susan", 100, 50, 40, 100, "Dark", DarkSkills);
             Critter Bactery = new Critter("Bactery", 90, 10, 20, 120, "Water", WaterSkills);
             Critter Calvache = new Critter("Calvache", 70, 100, 40, 300, "Wind", WindSkills);
             Critter Rockin = new Critter("Rockin", 50, 10, 25, 90, "Earth", EarthSkills);
@@ -159,7 +159,7 @@ namespace TallerPractico
                             player_2.MyCritters[critterSelecterP2].CurrentHp = player_2.MyCritters[critterSelecterP2].CurrentHp - damageInflicted;
 
                             //Vizualizamos la vida del enemigo.
-                            Console.WriteLine("Your enemy has {0} / {1} HP", player_2.MyCritters[critterSelecterP2].CurrentHp, player_2.MyCritters[critterSelecterP2].HP);
+                            Console.WriteLine("Your enemy has {0} / {1} HP", player_2.MyCritters[critterSelecterP2].CurrentHp, player_2.MyCritters[critterSelecterP2].HP);                           
                         }
                         //Cuando escoge una habilidad de tipo Soporte, y es de Reduccion de Velocidad
                         else if(player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].Type.Equals(Skill.EType.SupportSkill)
@@ -173,6 +173,7 @@ namespace TallerPractico
                             //Reduce la velocidad del critter enemigo.
                             player_2.MyCritters[critterSelecterP2].CurrentSpeed -= speedReduce * player_2.MyCritters[critterSelecterP2].BaseSpeed;
                             Console.WriteLine("The enemy has penalized with {0}%, {1} SpeedPoints", speedReduce * 100, player_2.MyCritters[critterSelecterP2].CurrentSpeed);
+                            Console.WriteLine("Remaining uses: " + (player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillLimit - player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillCount));
                         }
                         //Cuando escoge una habilidad de tipo Soporte, y NO es de Reduccion de Velocidad
                         else
@@ -186,6 +187,7 @@ namespace TallerPractico
 
                                 player_1.MyCritters[critterSelecterP1].CurrentAttack += buffBonus;
                                 Console.WriteLine("Attack incresed to {0} ({1})", player_1.MyCritters[critterSelecterP1].CurrentAttack, player_1.MyCritters[critterSelecterP1].BaseAttack);
+                                Console.WriteLine("Remaining uses: " + (player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillLimit - player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillCount));
                             }
                             else if (player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].Subtype.Equals(Skill.ESubtype.DefUp))
                             {
@@ -195,6 +197,7 @@ namespace TallerPractico
 
                                 player_1.MyCritters[critterSelecterP1].CurrentDefense += buffBonus;
                                 Console.WriteLine("Defense incresed to {0} ({1})", player_1.MyCritters[critterSelecterP1].CurrentDefense, player_1.MyCritters[critterSelecterP1].BaseDefense);
+                                Console.WriteLine("Remaining uses: " + (player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillLimit - player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillCount));
                             }
                         }
                     }
@@ -227,6 +230,7 @@ namespace TallerPractico
 
                             player_1.MyCritters[critterSelecterP1].CurrentSpeed -= speedReduce * player_1.MyCritters[critterSelecterP1].BaseSpeed;
                             Console.WriteLine("The enemy has penalized with {0}%, {1} SpeedPoints", speedReduce * 100, player_1.MyCritters[critterSelecterP1].CurrentSpeed);
+                            Console.WriteLine("Remaining uses: " + (player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillLimit - player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillCount));
                         }
                         else
                         {
@@ -237,6 +241,7 @@ namespace TallerPractico
 
                                 player_2.MyCritters[critterSelecterP2].CurrentAttack += buffBonus;
                                 Console.WriteLine("Attack incresed to {0} ({1})", player_2.MyCritters[critterSelecterP2].CurrentAttack, player_2.MyCritters[critterSelecterP2].BaseAttack);
+                                Console.WriteLine("Remaining uses: " + (player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillLimit - player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillCount));
                             }
                             else if (player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].Subtype.Equals(Skill.ESubtype.DefUp))
                             {
@@ -245,6 +250,7 @@ namespace TallerPractico
 
                                 player_2.MyCritters[critterSelecterP2].CurrentDefense += buffBonus;
                                 Console.WriteLine("Defense incresed to {0} ({1})", player_2.MyCritters[critterSelecterP2].CurrentDefense, player_2.MyCritters[critterSelecterP2].BaseDefense);
+                                Console.WriteLine("Remaining uses: " + (player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillLimit - player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillCount));
                             }
                         }
                     }
@@ -282,6 +288,7 @@ namespace TallerPractico
 
                             player_1.MyCritters[critterSelecterP1].CurrentSpeed -= speedReduce * player_1.MyCritters[critterSelecterP1].BaseSpeed;
                             Console.WriteLine("The enemy has penalized with {0}%, {1} SpeedPoints", speedReduce * 100, player_1.MyCritters[critterSelecterP1].CurrentSpeed);
+                            Console.WriteLine("Remaining uses: " + (player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillLimit - player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillCount));
                         }
                         else
                         {
@@ -292,6 +299,7 @@ namespace TallerPractico
 
                                 player_2.MyCritters[critterSelecterP2].CurrentAttack += buffBonus;
                                 Console.WriteLine("Attack incresed to {0} ({1})", player_2.MyCritters[critterSelecterP2].CurrentAttack, player_2.MyCritters[critterSelecterP2].BaseAttack);
+                                Console.WriteLine("Remaining uses: " + (player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillLimit - player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillCount));
                             }
                             else if (player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].Subtype.Equals(Skill.ESubtype.DefUp))
                             {
@@ -300,6 +308,7 @@ namespace TallerPractico
 
                                 player_2.MyCritters[critterSelecterP2].CurrentDefense += buffBonus;
                                 Console.WriteLine("Defense incresed to {0} ({1})", player_2.MyCritters[critterSelecterP2].CurrentDefense, player_2.MyCritters[critterSelecterP2].BaseDefense);
+                                Console.WriteLine("Remaining uses: " + (player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillLimit - player_2.MyCritters[critterSelecterP2].Moveset[skillSelecterP2].SkillCount));
                             }
                         }
                     }
@@ -339,6 +348,7 @@ namespace TallerPractico
 
                             player_2.MyCritters[critterSelecterP2].CurrentSpeed -= speedReduce * player_2.MyCritters[critterSelecterP2].BaseSpeed;
                             Console.WriteLine("The enemy has penalized with {0}%, {1} SpeedPoints", speedReduce * 100, player_2.MyCritters[critterSelecterP2].CurrentSpeed);
+                            Console.WriteLine("Remaining uses: " + (player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillLimit - player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillCount));
                         }
                         else
                         {
@@ -349,6 +359,7 @@ namespace TallerPractico
 
                                 player_1.MyCritters[critterSelecterP1].CurrentAttack += buffBonus;
                                 Console.WriteLine("Attack incresed to {0} ({1})", player_1.MyCritters[critterSelecterP1].CurrentAttack, player_1.MyCritters[critterSelecterP1].BaseAttack);
+                                Console.WriteLine("Remaining uses: " + (player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillLimit - player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillCount));
                             }
                             else if (player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].Subtype.Equals(Skill.ESubtype.DefUp))
                             {
@@ -357,6 +368,7 @@ namespace TallerPractico
 
                                 player_1.MyCritters[critterSelecterP1].CurrentDefense += buffBonus;
                                 Console.WriteLine("Defense incresed to {0} ({1})", player_1.MyCritters[critterSelecterP1].CurrentDefense, player_1.MyCritters[critterSelecterP1].BaseDefense);
+                                Console.WriteLine("Remaining uses: " + (player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillLimit - player_1.MyCritters[critterSelecterP1].Moveset[skillSelecterP1].SkillCount));
                             }
                         }
                     }

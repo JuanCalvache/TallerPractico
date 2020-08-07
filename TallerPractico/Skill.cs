@@ -64,6 +64,7 @@ namespace TallerPractico
         public EType Type { get => type; }
         public ESubtype Subtype { get => subtype; }
         public int SkillCount { get => skillCount; set => skillCount = value; }
+        public int SkillLimit => skillLimit;
 
 
         //Sobrecargar para Calcular:
