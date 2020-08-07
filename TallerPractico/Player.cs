@@ -8,12 +8,16 @@ namespace TallerPractico
     {
         //Atributos
         private List<Critter> myCritters;
-        private Critter [] deadCritters = new Critter [3];
+        private List<Critter> deadCritters;
 
-        //Constructor
-        public Player()
+        public Player(List<Critter> i_myCritters)
         {
-            
+            myCritters = i_myCritters;
         }
+
+        public List<Critter> MyCritters { get => myCritters; set => myCritters = value; }
+        public List<Critter> DeadCritters { get => deadCritters; set => deadCritters = value; }
+
+
     }
 }

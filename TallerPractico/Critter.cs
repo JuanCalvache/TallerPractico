@@ -8,15 +8,15 @@ namespace TallerPractico
     {
         //Atributos
         private string name, afinity; //Fire, Wind, Water, Earth, Dark, Light
-        private float baseAttack, currentAttack, baseDefense, currentDefense, baseSpeed, currentSpeed, hp;
+        private float baseAttack, currentAttack, baseDefense, currentDefense, baseSpeed, currentSpeed, hp, currentHp;
         private List<Skill> moveset;
 
         //Constructor
-        public Critter(string i_name, string i_afinity, float i_baseAttack, float i_baseDefense, float i_baseSpeed, float i_hp,
-            Skill skill1, Skill skill2, Skill skill3)
+        public Critter(string i_name, float i_baseAttack, float i_baseDefense, float i_baseSpeed, float i_hp, string i_afinity, List<Skill> i_skills)
         {
             name = i_name;
             afinity = i_afinity;
+            
             if (i_baseAttack >= 10 && i_baseAttack <= 100)
             {
                 baseAttack = i_baseAttack;
@@ -35,21 +35,17 @@ namespace TallerPractico
                 currentSpeed = baseSpeed; 
             }
 
+            if (i_skills.Count <= 3)
+            {
+                moveset = i_skills;
+            }
+
             hp = i_hp;
+            currentHp = hp;
         }
 
         //Propiedades de los atributos
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public string Afinity
-        {
-            get { return afinity; }
-            set { afinity = value; }
-        }
+        public string Name { get => name; }
 
         public float CurrentAttack
         {
@@ -68,12 +64,13 @@ namespace TallerPractico
             get { return currentSpeed; }
             set { currentSpeed = value; }
         }
+        public float CurrentHp { get => currentHp; set => currentHp = value; }
 
-        public float HP
-        {
-            get { return hp; }
-            set { hp = value; }
-        }
-
+        public float HP { get => hp; }
+        public string Afinity { get; }
+        public float BaseAttack { get => baseAttack; }
+        public float BaseDefense { get => baseDefense; }
+        public float BaseSpeed { get => baseSpeed; }
+        public List<Skill> Moveset { get => moveset; }
     }
 }

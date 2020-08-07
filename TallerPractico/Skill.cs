@@ -4,23 +4,24 @@ using System.Text;
 
 namespace TallerPractico
 {
-    class Skill
+    abstract class Skill
     {
         //Atributos
-        protected string name, affinity;
-        protected float skillPower;
+        protected string name;
+        protected float power;
+        protected string afinity;
+
+        protected Skill(string i_name, float i_power, string i_afinity)
+        {
+            name = i_name;
+            power = i_power;
+            afinity = i_afinity;
+        }
 
         //Propiedades de los Atributos
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        public string Name { get => name; }
 
-        public string Affinity
-        {
-            get { return affinity; }
-            set { affinity = value; }
-        }
+        public string Afinity { get => afinity; }
+        public float Power { get => power;  }
     }
 }
