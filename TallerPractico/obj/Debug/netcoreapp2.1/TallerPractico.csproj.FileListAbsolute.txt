@@ -1,0 +1,11 @@
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\bin\Debug\netcoreapp2.1\TallerPractico.deps.json
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\bin\Debug\netcoreapp2.1\TallerPractico.runtimeconfig.json
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\bin\Debug\netcoreapp2.1\TallerPractico.runtimeconfig.dev.json
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\bin\Debug\netcoreapp2.1\TallerPractico.dll
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\bin\Debug\netcoreapp2.1\TallerPractico.pdb
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\obj\Debug\netcoreapp2.1\TallerPractico.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\obj\Debug\netcoreapp2.1\TallerPractico.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\obj\Debug\netcoreapp2.1\TallerPractico.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\obj\Debug\netcoreapp2.1\TallerPractico.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\obj\Debug\netcoreapp2.1\TallerPractico.dll
+C:\Users\Usuario\source\repos\TallerPractico\TallerPractico\obj\Debug\netcoreapp2.1\TallerPractico.pdb
